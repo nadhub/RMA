@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sav_domain_Client" object="${client}" path="/clients" z="5WZUCu/puchV5IImiqDuZBqCkBo=">
+        <field:display field="client" id="s_com_sav_domain_Client_client" object="${client}" z="c9bo4IFSayUOXdQmv4LGswJ29kc="/>
+        <field:display field="adresse1" id="s_com_sav_domain_Client_adresse1" object="${client}" z="qpfENDOxAVqDAMSBLOYQFH3OBpk="/>
+        <field:display field="adresse2" id="s_com_sav_domain_Client_adresse2" object="${client}" z="7u4CIuiuIXXlDNvTfM4UHEvomcA="/>
+        <field:display field="codePostal" id="s_com_sav_domain_Client_codePostal" object="${client}" z="OCsU4VVh5P3zci47cOY0y5GuY4k="/>
+        <field:display field="ville" id="s_com_sav_domain_Client_ville" object="${client}" z="WBiJzG2DWYh+SK9NVIvyJM3kWqY="/>
+        <field:display field="pays" id="s_com_sav_domain_Client_pays" object="${client}" z="n2bAVBuXIvp0XviPw3Cel03dhYE="/>
+        <field:display field="region" id="s_com_sav_domain_Client_region" object="${client}" z="nQ1/sdlbuwQC8uPO2fAiU0nuehs="/>
+        <field:display field="contact" id="s_com_sav_domain_Client_contact" object="${client}" z="2O56V4PS4ZfMRjh7erqrKgxNU/M="/>
+        <field:display field="tel" id="s_com_sav_domain_Client_tel" object="${client}" z="aYJ8mluhWTaE8WFWCCOj6myTjXg="/>
+        <field:display field="email" id="s_com_sav_domain_Client_email" object="${client}" z="coqZOXt+6ak7vjUoHJJX36EY41c="/>
+    </page:show>
+</div>

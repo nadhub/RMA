@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="materielrmas/list">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/list.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/show">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/show.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/create">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/create.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/update">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/update.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/equipement">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/equipement.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/findMaterielRmasByNumSerieEntreeLike">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/findMaterielRmasByNumSerieEntreeLike.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/findMaterielRmasByRma">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/findMaterielRmasByRma.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/findMaterielRmasByStatut">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/findMaterielRmasByStatut.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/findMaterielRmasByProjetAndStatut">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/findMaterielRmasByProjetAndStatut.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/findMaterielRmasByDiagnosticLike">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/findMaterielRmasByDiagnosticLike.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/findMaterielRmasByDateReceptionGreaterThanEquals">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/findMaterielRmasByDateReceptionGreaterThanEquals.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/visage">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/visage.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/pdp">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/pdp.jspx"/>
+    </definition>
+<definition extends="default" name="materielrmas/findMaterielRmasByClient">
+        <put-attribute name="body" value="/WEB-INF/views/materielrmas/findMaterielRmasByClient.jspx"/>
+   </definition>
+</tiles-definitions>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:find finderName="ByNumSerieEntreeLikeAndModele" id="ff_com_sav_domain_MaterielRma" path="/materielrmas" z="gEQVhzLv01T0treOoFfyuBvHLBQ=">
+        <field:select disableFormBinding="true" field="modele" id="f_com_sav_domain_MaterielRma_modele" itemValue="id" items="${produits}" path="/produits" required="true" z="55jNTSrCQ0K1ta8IlEfkXZD/f3Y="/>
+        <field:input disableFormBinding="true" field="numSerieEntree" id="f_com_sav_domain_MaterielRma_numSerieEntree" required="true" z="5ELqjFjtZQXIYHDEu4Z/4+jzIVM="/>
+    </form:find>
+</div>

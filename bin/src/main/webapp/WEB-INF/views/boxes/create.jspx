@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_sav_domain_Box" modelAttribute="box" path="/boxes" render="${empty dependencies}" z="9iRTUraUBUqdVCLkd45MQ7K8bKY=">
+        <field:select field="packingList" id="c_com_sav_domain_Box_packingList" itemValue="id" items="${krakrmas}" path="/krakrmas" z="GEQ1Gs2JPFSfiXtbHtzeUDerrzU="/>
+        <field:input field="lotNumber" id="c_com_sav_domain_Box_lotNumber" required="true" validationMessageCode="field_invalid_integer" z="Fv/XXlPT3WooyFu6aO7UlOzIhcc="/>
+        <field:input field="quantity" id="c_com_sav_domain_Box_quantity" validationMessageCode="field_invalid_integer" z="miL5qVqVUmK4JVX7wQ0qAk8ODUY="/>
+        <field:input field="weight" id="c_com_sav_domain_Box_weight" z="e0HloG2u5VVm5AjnwvIojfS49so="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_sav_domain_Box" render="${not empty dependencies}" z="Gd4YYRMcprwatxv0Yl/98Exqvhg="/>
+</div>

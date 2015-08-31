@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sav_domain_Box" items="${boxes}" z="sBIB4uiL0wfYM5WYWXtQJWSKLYY=">
+        <table:table data="${boxes}" id="l_com_sav_domain_Box" path="/boxes" z="OJh9c42C7z2A6AY0/ud7fnQSVbI=">
+            <table:column id="c_com_sav_domain_Box_packingList" property="packingList" z="XW+ZEJ34usEnhqzYTq1ia82wa18="/>
+            <table:column id="c_com_sav_domain_Box_lotNumber" property="lotNumber" z="2gvtyAMsQfsmzkqgGQc6KLNE1Tg="/>
+            <table:column id="c_com_sav_domain_Box_quantity" property="quantity" z="/oiNU2FDuGjGpVUMAqe+5MhdvmI="/>
+            <table:column id="c_com_sav_domain_Box_weight" property="weight" z="A6ZHVhYhgiD+gbYVwjZnrIU04to="/>
+        </table:table>
+    </page:list>
+</div>

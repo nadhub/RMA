@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+<!--
+  Source: http://krams915.blogspot.com/2010/12/spring-3-mvc-jasper-subreports-tutorial.html
+-->
+
+  <util:map id="subReportUrls">
+    <!-- This entry key must be declared exactly as you declared it in the master JRXML file -->
+    <!-- Add one <entry /> node for each sub-report you need to define -->
+    <entry key="mySubReportLocation" value="/WEB-INF/reports/pieceoff_Sub1_pieceoff.jasper"/> 
+  </util:map>
+
+  <util:list id="subReportDataKeys">
+    <!-- This value must be declared exactly as you declared it in the master JRXML file -->
+    <!-- Add one <value /> node for each sub-report data source you need to define -->
+    <value>JasperCustomSubReportDatasource</value> 
+  </util:list>
+  
+<bean class="com.sav.web.servlet.view.jasperreports.CustomJasperReportsMultiFormatView" 
+id="livraison_borederaudelivraison" 
+p:reportDataKey="borederaudelivraisonList" 
+p:subReportDataKeys-ref="subReportDataKeys" 
+p:subReportUrls-ref="subReportUrls" 
+p:url="/WEB-INF/reports/livraison_borederaudelivraison.jrxml"/>
+
+<bean class="com.sav.web.servlet.view.jasperreports.CustomJasperReportsMultiFormatView" 
+id="materielrma_equipement" 
+p:reportDataKey="equipementList" 
+p:subReportDataKeys-ref="subReportDataKeys" 
+p:subReportUrls-ref="subReportUrls" 
+p:url="/WEB-INF/reports/materielrma_equipement.jrxml"/>
+
+<bean class="com.sav.web.servlet.view.jasperreports.CustomJasperReportsMultiFormatView" 
+id="materielrma_visage" 
+p:reportDataKey="visageList" 
+p:subReportDataKeys-ref="subReportDataKeys" 
+p:subReportUrls-ref="subReportUrls" 
+p:url="/WEB-INF/reports/materielrma_visage.jrxml"/>
+
+<bean class="com.sav.web.servlet.view.jasperreports.CustomJasperReportsMultiFormatView" 
+id="materielrma_pdp" 
+p:reportDataKey="pdpList" 
+p:subReportDataKeys-ref="subReportDataKeys" 
+p:subReportUrls-ref="subReportUrls" 
+p:url="/WEB-INF/reports/materielrma_pdp.jrxml"/>
+
+<bean class="com.sav.web.servlet.view.jasperreports.CustomJasperReportsMultiFormatView" 
+id="pieceoff_pieceoff" 
+p:reportDataKey="pieceoffList" 
+p:subReportDataKeys-ref="subReportDataKeys" 
+p:subReportUrls-ref="subReportUrls" 
+p:url="/WEB-INF/reports/pieceoff_pieceoff.jrxml"/>
+</beans>

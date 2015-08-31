@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sav_domain_MaterielRma" items="${materielrmas}" z="+rCaLayyaIUBfuqRLwXB5dV7mEo=">
+        <table:table data="${materielrmas}" id="l_com_sav_domain_MaterielRma" path="/materielrmas" z="ICwdRVt/+bsseVEDrK9yac1Kkh0=">
+            <table:column id="c_com_sav_domain_MaterielRma_dateReception" property="dateReception" z=""/>
+            <table:column id="c_com_sav_domain_MaterielRma_modele" property="modele.modele" z="user-managed"/>
+            <table:column id="c_com_sav_domain_MaterielRma_numSerieEntree" property="numSerieEntree" z="UCQVsu5X7WT4zBT2T/DiJWhVxTE="/>
+            <table:column id="c_com_sav_domain_MaterielRma_panne" property="panne" z="cJcVQwXqcyhGRKvi33McTSItU64="/>
+            <table:column id="c_com_sav_domain_MaterielRma_projet" property="projet" z="nCeytbF0TYVhtlgfwmFm9c3392M="/>
+            <table:column id="c_com_sav_domain_MaterielRma_rma" property="rma.rmaNumber" z="user-managed"/>
+            <table:column id="c_com_sav_domain_MaterielRma_rma_client" property="rma.client.client" z=""/>
+            <table:column id="c_com_sav_domain_MaterielRma_dateReparation" property="dateReparation" z=""/>
+            <table:column id="c_com_sav_domain_MaterielRma_diagnostic" property="diagnostic" z=""/>
+            <table:column id="c_com_sav_domain_MaterielRma_action" property="action" z=""/>
+            <table:column id="c_com_sav_domain_MaterielRma_notes" property="notes" z=""/>
+            <table:column id="c_com_sav_domain_MaterielRma_garantie" property="garantie" z="BlvhAp4wo/B4zgGlQBdNxbOceg8="/>
+              <BR/>
+            <div>
+            <!--button id="button_01" onclick="self.location.href='/suivi-rma/materielrmas/reports/equipement?form'">SUIVI DES REPARATIONS</button-->
+            <a id="button_01" style="color: blue;" href='/suivi-rma/materielrmas/reports/equipement?form'>SUIVI DES REPARATIONS</a>
+            </div>
+            <BR/>
+            
+        </table:table>
+    </page:list>
+   <script type="text/javascript">
+            $(function (){
+				$('#button_01').button();
+                });
+            
+   </script>
+   <BR/> 
+</div>

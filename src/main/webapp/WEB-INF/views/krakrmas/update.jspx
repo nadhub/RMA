@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_sav_domain_KrakRma" modelAttribute="krakRma" path="/krakrmas" versionField="Version" z="etMPOlC56C/UMEQ4+naRcJDs4+Q=">
+        <field:input field="packingList" id="c_com_sav_domain_KrakRma_packingList" required="true" z="jf2L8oZ9ELktK+7+DsJTD4Ahep8="/>
+        <field:datetime dateTimePattern="${krakRma_dateofshipment_date_format}" field="dateOfShipment" id="c_com_sav_domain_KrakRma_dateOfShipment" z="J396YNjCZCIuXfNXGt/q7IfKNdM="/>
+        <field:select field="transport" id="c_com_sav_domain_KrakRma_transport" items="${transports}" path="transports" z="YzrB4j4mm337laFupCSyfAqHGjY="/>
+        <field:input field="trackingNumber" id="c_com_sav_domain_KrakRma_trackingNumber" z="yFZMe93dvDi6IHVAKEOfNuZgZxw="/>
+        <field:select field="projectName" id="c_com_sav_domain_KrakRma_projectName" items="${projectkrakrmas}" path="projectkrakrmas" z="O24goXiCeWBeZIxfnob9fDm627s="/>
+        <field:select field="deliverySite" id="c_com_sav_domain_KrakRma_deliverySite" itemValue="id" items="${adressretours}" path="/adressretours" z="CnX0OlViJq428RYoX1qAMCm73uo="/>
+    </form:update>
+</div>

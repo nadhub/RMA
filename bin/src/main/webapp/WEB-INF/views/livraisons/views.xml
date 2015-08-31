@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="livraisons/list">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/list.jspx"/>
+    </definition>
+<definition extends="default" name="livraisons/show">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/show.jspx"/>
+    </definition>
+<definition extends="default" name="livraisons/create">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/create.jspx"/>
+    </definition>
+<definition extends="default" name="livraisons/update">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/update.jspx"/>
+    </definition>
+<definition extends="default" name="livraisons/borederaudelivraison">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/borederaudelivraison.jspx"/>
+    </definition>
+<definition extends="default" name="livraisons/findLivraisonsByReferenceEquals">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/findLivraisonsByReferenceEquals.jspx"/>
+    </definition>
+<definition extends="default" name="livraisons/findLivraisonsByAdressRetour">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/findLivraisonsByAdressRetour.jspx"/>
+    </definition>
+<definition extends="default" name="livraisons/findLivraisonsByProjetAndStatut">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/findLivraisonsByProjetAndStatut.jspx"/>
+    </definition>
+
+<definition extends="default" name="livraisons/findLivraisonsByMaterielRma">
+        <put-attribute name="body" value="/WEB-INF/views/livraisons/findLivraisonsByMaterielRma.jspx"/>
+    </definition>
+</tiles-definitions>

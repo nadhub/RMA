@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="rmas/list">
+        <put-attribute name="body" value="/WEB-INF/views/rmas/list.jspx"/>
+    </definition>
+<definition extends="default" name="rmas/show">
+        <put-attribute name="body" value="/WEB-INF/views/rmas/show.jspx"/>
+    </definition>
+<definition extends="default" name="rmas/create">
+        <put-attribute name="body" value="/WEB-INF/views/rmas/create.jspx"/>
+    </definition>
+<definition extends="default" name="rmas/update">
+        <put-attribute name="body" value="/WEB-INF/views/rmas/update.jspx"/>
+    </definition>
+<definition extends="default" name="rmas/findRmasByRmaNumberLike">
+        <put-attribute name="body" value="/WEB-INF/views/rmas/findRmasByRmaNumberLike.jspx"/>
+    </definition>
+</tiles-definitions>

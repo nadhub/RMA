@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sav_domain_Livraison" object="${livraison}" path="/livraisons" z="jTFEBaaeZWHVBaOWtWXfBmVgx+g=">
+        <field:display field="reference" id="s_com_sav_domain_Livraison_reference" object="${livraison}" z="lQhxJWhKZYm9GcJeAsIJwQf/0VU="/>
+        <field:display date="true" dateTimePattern="${livraison_datelivraison_date_format}" field="dateLivraison" id="s_com_sav_domain_Livraison_dateLivraison" object="${livraison}" z="2B0HkPpypvJCYlA73MNeMn9Skc0="/>
+        <field:display field="materielRma" id="s_com_sav_domain_Livraison_materielRma" object="${livraison}" z="HkOcUVe+4dSx8brTHRUoQfSeXLE="/>
+        <field:display field="transport" id="s_com_sav_domain_Livraison_transport" object="${livraison}" z="2/Yl5095tl41ygwEqZWMMdsZBIA="/>
+        <field:display field="trackingNumber" id="s_com_sav_domain_Livraison_trackingNumber" object="${livraison}" z="a8zz9djF52Tgal43/pAhm9eplCY="/>
+       
+       <input type="button" style="background-color: blue; color: white;" value="Imprimer en PDF" onclick="self.location.href='/suivi-rma/livraisons/livraisonsDetails/${itemId}/pdf'"/>
+       
+    </page:show>
+</div>

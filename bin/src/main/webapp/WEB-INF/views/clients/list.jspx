@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sav_domain_Client" items="${clients}" z="Q5BzZnPIjr+1uuWQTfBFobd9kEY=">
+        <table:table data="${clients}" id="l_com_sav_domain_Client" path="/clients" z="MSqEgs+ab3k2P+77yiYfOJszbWE=">
+            <table:column id="c_com_sav_domain_Client_client" property="client" z="+GBLggdQWqAYh53sGUyj8OELJ58="/>
+            <table:column id="c_com_sav_domain_Client_adresse1" property="adresse1" z="RUpFUe2RuSdrXtu5qLe7sHj+VQg="/>
+            <table:column id="c_com_sav_domain_Client_adresse2" property="adresse2" z="FSguxDapkVHefeSxy/C+pscNUoc="/>
+            <table:column id="c_com_sav_domain_Client_codePostal" property="codePostal" z="spGqLvUHwnwlAHd5NSQAKaZHT9U="/>
+            <table:column id="c_com_sav_domain_Client_ville" property="ville" z="RGAPodnAKKg0xbKPVDao1vHolTc="/>
+            <table:column id="c_com_sav_domain_Client_pays" property="pays" z="w3KeCwrK/g/Ah91B6xnRPfU0k7g="/>
+        </table:table>
+    </page:list>
+</div>

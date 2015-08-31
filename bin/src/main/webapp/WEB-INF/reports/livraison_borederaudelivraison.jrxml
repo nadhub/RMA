@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="JasperReportTemplate" pageWidth="595" pageHeight="842" columnWidth="498" leftMargin="48" rightMargin="49" topMargin="56" bottomMargin="56" whenResourceMissingType="Empty">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="670"/>
+	<import value="com.sav.domain.MaterielRma"/>
+	<import value="com.sav.domain.Client"/>
+	<import value="com.sav.reference.Transport"/>
+	<import value="com.sav.domain.AdressRetour"/>
+	<import value="com.sav.domain.Rma"/>
+	<parameter name="title" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="reference" class="java.lang.String"/>
+	<field name="dateLivraison" class="java.sql.Timestamp"/>
+	<field name="trackingNumber" class="java.lang.String"/>
+	<field name="materielRma" class="com.sav.domain.MaterielRma"/>
+	<field name="transport" class="com.sav.reference.Transport"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="44" width="118" height="23"/>
+				<imageExpression class="java.lang.String"><![CDATA["../../images/teleste_logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="249" y="45" width="249" height="22"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bordereau de réparation]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="366" y="67" width="132" height="16"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reference}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="67" width="249" height="47"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[113-121, avenue du Président Wilson
+Service Après Vente
+Bâtiment C - 2ème étage
+93210 Saint Denis la Plaine
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="67" width="117" height="16"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Référence:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="83" width="117" height="16"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date de livraison:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="366" y="83" width="132" height="16"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{dateLivraison}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="249" y="99" width="117" height="15"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[RMA Number:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="366" y="99" width="132" height="15"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getRmaNumber().toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="218" splitType="Stretch">
+			<staticText>
+				<reportElement x="249" y="18" width="249" height="16"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adresse de Livraison]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="249" y="34" width="249" height="16"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getAdresseDeRetour().getAdresse1().toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="249" y="50" width="249" height="16"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getAdresseDeRetour().getAdresse2().toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="249" y="66" width="51" height="16"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getAdresseDeRetour().getCodePostal().toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="300" y="66" width="198" height="16"/>
+				<box leftPadding="2">
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getAdresseDeRetour().getVille().toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="249" y="82" width="249" height="16"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getAdresseDeRetour().getPays().toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="18" width="85" height="16"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Contact:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="66" width="85" height="16"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tranporteur:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="66" width="164" height="16"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{transport}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="82" width="85" height="16"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[N° de suivi:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="82" width="164" height="16"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{trackingNumber}.toString()]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="198" width="498" height="20" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement x="194" y="2" width="120" height="18"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Diagnostic]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="87" y="2" width="107" height="18"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[N° de série]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="314" y="2" width="116" height="18"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Action]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="430" y="2" width="68" height="18"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Adresse IP ]]></text>
+				</staticText>
+			</frame>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="18" width="164" height="16"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getAdresseDeRetour().getContact().toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="34" width="85" height="16"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tél:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="34" width="164" height="16"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getAdresseDeRetour().getTel().toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="85" height="16"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[E-mail:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="50" width="164" height="16"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getRma().getAdresseDeRetour().getEmail().toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="200" width="87" height="18"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modèle]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="213" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="87" height="213"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getModele().getModele().toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="87" y="0" width="107" height="213"/>
+				<box leftPadding="2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getNumSerieEntree().toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="194" y="0" width="120" height="213"/>
+				<box leftPadding="2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getDiagnostic().toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="314" y="0" width="116" height="213"/>
+				<box leftPadding="2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getAction().toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="430" y="0" width="68" height="213"/>
+				<box leftPadding="2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{materielRma}.getIpSav().toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="146" height="30"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[SITE TELESTE FRANCE (SAS)
+113-121, Avenue du Président Wilson
+93210 Saint- Denis La Plaine, FRANCE                       ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="194" y="12" width="146" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[   Téléphone: 01 55 93 44 16-10
+   Télécopie:  01 55 93 14 16]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="11" width="85" height="30"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SIRET: 48814679600021
+APE: 6202A
+www.teleste.fr]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="7" width="498" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="45" width="498" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="39" width="249" height="64"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[
+
+.......................................................................................
+Date de réception]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="10" width="498" height="15" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<text><![CDATA[Merci de nous retourner un examplaire signé]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="39" width="249" height="64"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[
+
+.......................................................................................
+Nom et signature]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

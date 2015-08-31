@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="JasperReportTemplate" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="353"/>
+	<property name="ireport.y" value="0"/>
+	<import value="com.sav.reference.Projet"/>
+	<import value="com.sav.domain.Produit"/>
+	<import value="com.sav.reference.Statut"/>
+	<import value="com.sav.domain.AdressRetour"/>
+	<import value="com.sav.domain.Rma"/>
+	<parameter name="title" class="java.lang.String"/>
+	<field name="numSerieEntree" class="java.lang.String"/>
+	<field name="panne" class="java.lang.String"/>
+	<field name="garantie" class="java.lang.Boolean"/>
+	<field name="diagnostic" class="java.lang.String"/>
+	<field name="action" class="java.lang.String"/>
+	<field name="modele" class="com.sav.domain.Produit"/>
+	<field name="statut" class="com.sav.reference.Statut"/>
+	<field name="rma" class="com.sav.domain.Rma"/>
+	<field name="dateReception" class="java.sql.Timestamp"/>
+	<field name="projet" class="com.sav.reference.Projet"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="77" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="131" height="20"/>
+				<imageExpression class="java.lang.String"><![CDATA["../../images/teleste_logo.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="702" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="1" y="36" width="801" height="31" forecolor="#FFFFFF" backcolor="#0000CC"/>
+			</rectangle>
+			<textField>
+				<reportElement mode="Transparent" x="176" y="36" width="401" height="31" forecolor="#FFFFFF" backcolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font size="17" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Suivi maintenance " + $F{projet}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="15">
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="71" y="0" width="74" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date récéption]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="1" y="0" width="70" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="685" y="0" width="55" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[statut]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="471" y="0" width="107" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diagnostic]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="578" y="0" width="107" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[action]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="361" y="0" width="110" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Panne]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="242" y="0" width="119" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° de série]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="145" y="0" width="97" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modèle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="740" y="0" width="62" height="15" isPrintInFirstWholeBand="true"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adr retour]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="802" height="15" backcolor="#CCCCCC">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() % 2 == 1]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="242" y="0" width="118" height="15"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{numSerieEntree}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="361" y="0" width="109" height="15"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{panne}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="470" y="0" width="107" height="15"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{diagnostic}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="577" y="0" width="107" height="15"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{action}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="145" y="0" width="96" height="15"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{modele}.getModele().toString()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="685" y="0" width="55" height="15"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{statut}.toString()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="1" y="0" width="70" height="15"/>
+				<box rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rma}.getRmaNumber().toString()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yy" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="71" y="0" width="74" height="15"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{dateReception}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="740" y="0" width="62" height="15"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rma}.getAdresseDeRetour().getAdresseRetour().toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement x="685" y="33" width="77" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" sur"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="765" y="33" width="37" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

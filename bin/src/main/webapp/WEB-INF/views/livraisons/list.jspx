@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+xmlns:table="urn:jsptagdir:/WEB-INF/tags/form2/fields" 
+version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sav_domain_Livraison" items="${livraisons}" z="tsVZQibspShNhUbU7ka/W6YiG9g=">
+        <table:table data="${livraisons}" id="l_com_sav_domain_Livraison" path="/livraisons" z="VNisBRM71Hv3Wrv2ndrmuYN6WtM=">
+            <table:column id="c_com_sav_domain_Livraison_reference" property="reference" z="9acwWYbwRfdrPRmAXjflLRcKvX0="/>
+            <table:column date="true" dateTimePattern="${livraison_datelivraison_date_format}" id="c_com_sav_domain_Livraison_dateLivraison" property="dateLivraison" z="GDdFTc9CcDg1GTeV7+mPrupC4fo="/>
+            <table:column id="c_com_sav_domain_Livraison_materielRma" property="materielRma.modele.modele" z="user-managed"/>
+            <table:column id="c_com_sav_domain_Livraison_materielRma_rma" property="materielRma.rma.rmaNumber" z=""/>
+            <table:column id="c_com_sav_domain_Livraison_materielRma_rma_adresseDeRetour" property="materielRma.rma.adresseDeRetour.adresseRetour" z=""/>
+            <table:column id="c_com_sav_domain_Livraison_transport" property="transport" z="aWByM7MarXKrdP4hspx4YZRvndk="/>
+            <table:column id="c_com_sav_domain_Livraison_trackingNumber" property="trackingNumber" z="Wnun+/nU0VccRjE8r8tsD1MBJ30="/>
+            <table:column id="c_com_sav_domain_Livraison_materielRma_statut" property="materielRma.statut" z=""/>
+        </table:table>
+    </page:list>
+</div>

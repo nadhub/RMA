@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sav_domain_Box" object="${box}" path="/boxes" z="m+YM70aM0ufnwlLMKu7slJmt/0k=">
+        <field:display field="packingList" id="s_com_sav_domain_Box_packingList" object="${box}" z="6skwh2jxZl9fLSwT4zBNDOL0+Mk="/>
+        <field:display field="lotNumber" id="s_com_sav_domain_Box_lotNumber" object="${box}" z="oGrj/BsAVCnyQuGipryIXMgNxS0="/>
+        <field:display field="quantity" id="s_com_sav_domain_Box_quantity" object="${box}" z="VkarsF9DZtkyC74SRguCmm+1Wgs="/>
+        <field:display field="weight" id="s_com_sav_domain_Box_weight" object="${box}" z="wuQzOfGweY8NCGAciEE7mQomBUk="/>
+    </page:show>
+</div>

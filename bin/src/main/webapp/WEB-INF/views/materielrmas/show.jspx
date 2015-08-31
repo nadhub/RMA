@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sav_domain_MaterielRma" object="${materielrma}" path="/materielrmas" z="E8xS28+iRGTIqA+odRcS7SjsYQM=">
+        <field:display date="true" dateTimePattern="${materielRma_datereception_date_format}" field="dateReception" id="s_com_sav_domain_MaterielRma_dateReception" object="${materielrma}" z="7Y16yx0ze8a2OC3FjcJx5ibso/g="/>
+        <field:display field="rma" id="s_com_sav_domain_MaterielRma_rma" object="${materielrma}" z="m7N/69KlimqmkYMDoQhJkSLMXH0="/>
+        <field:display field="modele" id="s_com_sav_domain_MaterielRma_modele" object="${materielrma}" z="yJVVMfEoHoBZLrVLde5pUvXO/0w="/>
+        <field:display field="numSerieEntree" id="s_com_sav_domain_MaterielRma_numSerieEntree" object="${materielrma}" z="uCv+lOYy79ItNYKRI0K6bSBr0Nc="/>
+        <field:display field="panne" id="s_com_sav_domain_MaterielRma_panne" object="${materielrma}" z="rh4lyamOo1MPxhNe7NpLsA2NsYk="/>
+        <field:display field="projet" id="s_com_sav_domain_MaterielRma_projet" object="${materielrma}" z="hF8M5RrZ6hfTghNb+UzblbaVDgc="/>
+        <field:display field="garantie" id="s_com_sav_domain_MaterielRma_garantie" object="${materielrma}" z="Ub1CJdnxO8fL3bXyw3U7J9zNKrE="/>
+        <field:display date="true" dateTimePattern="${materielRma_datereparation_date_format}" field="dateReparation" id="s_com_sav_domain_MaterielRma_dateReparation" object="${materielrma}" z="NkvRHoASCK5vDAAsbw4vbT+FRFs="/>
+        <field:display field="diagnostic" id="s_com_sav_domain_MaterielRma_diagnostic" object="${materielrma}" z="fYTEZDAux2qPthmXTlkXlUTNPfM="/>
+        <field:display field="action" id="s_com_sav_domain_MaterielRma_action" object="${materielrma}" z="03GcUx6as8iC0NPvh4PJaaGGkHk="/>
+        <field:display field="materielRemplace" id="s_com_sav_domain_MaterielRma_materielRemplace" object="${materielrma}" z="yynFZ5C9NF9NldL/7xumAiAS92w="/>
+        <field:display field="numSerieSortie" id="s_com_sav_domain_MaterielRma_numSerieSortie" object="${materielrma}" z="jZ/EDLCv38/X5JLpysnczgvuKls="/>
+        <field:display field="ipSav" id="s_com_sav_domain_MaterielRma_ipSav" object="${materielrma}" z="XkNpJhJj1S+06ibIXPKDYzraxeU="/>
+        <field:display field="statut" id="s_com_sav_domain_MaterielRma_statut" object="${materielrma}" z="+cbuiCSvb/YPzKAHBlDVnuV3ce8="/>
+        <field:display field="notes" id="s_com_sav_domain_MaterielRma_notes" object="${materielrma}" z="jsgPECw1j+jMplDgG4Ye3NMLufU="/>
+    </page:show>
+</div>

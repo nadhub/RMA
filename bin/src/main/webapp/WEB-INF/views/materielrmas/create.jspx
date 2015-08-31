@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_sav_domain_MaterielRma" modelAttribute="materielRma" path="/materielrmas" render="${empty dependencies}" z="WJQFS9GG51HheGUhrS4crf7YeNw=">
+        <field:select field="modele" id="c_com_sav_domain_MaterielRma_modele" itemValue="id" items="${produits}" path="/produits" required="true" z="VEXwlLzJ4TN4AEzc1zHi83QC0fE="/>
+        <field:input field="numSerieEntree" id="c_com_sav_domain_MaterielRma_numSerieEntree" required="true" z="KwUsYydL96/thbPLzjx2y+yUPck="/>
+        <field:textarea field="panne" id="c_com_sav_domain_MaterielRma_panne" z="CSGJ8ElP+mKxE94EbOPYZ0w6um0="/>
+        <field:select field="projet" id="c_com_sav_domain_MaterielRma_projet" items="${projets}" path="projets" z="9kwblvq9BKle9QmC/prD7xHj60g="/>
+        <field:checkbox field="garantie" id="c_com_sav_domain_MaterielRma_garantie" z="2wbfK87mbFmVGwT7GSeT9KG9oEU="/>
+        <field:datetime dateTimePattern="${materielRma_datereception_date_format}" field="dateReception" id="c_com_sav_domain_MaterielRma_dateReception" required="true" z="HQAkULTUGbGJKACuY/PfY2CNNBs="/>
+        <field:select field="rma" id="c_com_sav_domain_MaterielRma_rma" itemValue="id" items="${rmas}" path="/rmas" required="true" z="kWHjwUQ6e12bQjOiCQjzx3FVaNI="/>
+        <field:datetime dateTimePattern="${materielRma_datereparation_date_format}" field="dateReparation" id="c_com_sav_domain_MaterielRma_dateReparation" z="v84paDGZnPHryASF1HBVnB7sRPc="/>
+        <field:textarea field="diagnostic" id="c_com_sav_domain_MaterielRma_diagnostic" z="uvs/drOB3YRtcjSnOwygRCB8FRc="/>
+        <field:textarea field="action" id="c_com_sav_domain_MaterielRma_action" z="hknwe2tvxbkZjo2Fxbac+kDUtl8="/>
+        <field:checkbox field="materielRemplace" id="c_com_sav_domain_MaterielRma_materielRemplace" z="VV9QEoQszGj323ISM7HgQ4SVWSg="/>
+        <field:input field="numSerieSortie" id="c_com_sav_domain_MaterielRma_numSerieSortie" z="OClSCWEdMMLUlZmZX3YjBxgl+WI="/>
+        <field:input field="ipSav" id="c_com_sav_domain_MaterielRma_ipSav" z="7B3B/3A6q1w4euMJzFyBPltiv6U="/>
+        <field:select field="statut" id="c_com_sav_domain_MaterielRma_statut" items="${statuts}" path="statuts" z="FljEl2YXPtF/YJYb1LXE29ABZUk="/>
+        <field:textarea field="notes" id="c_com_sav_domain_MaterielRma_notes" z="HQZKDqBrhVV1cpZX3IKuo4lS7HM="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_sav_domain_MaterielRma" render="${not empty dependencies}" z="hO3+Q/PKRnD2Ybq1R46aOK0MHqA="/>
+</div>

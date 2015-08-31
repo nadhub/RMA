@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sav_domain_PieceOff" object="${pieceoff}" path="/pieceoffs" z="uYmQNpQV1HaUG9FWZCd+rio9tYg=">
+        <field:display date="true" dateTimePattern="${pieceOff_datehs_date_format}" field="dateHs" id="s_com_sav_domain_PieceOff_dateHs" object="${pieceoff}" z="Fe/rMy4eMf3gVYrG7efxrg339I8="/>
+        <field:display field="piece" id="s_com_sav_domain_PieceOff_piece" object="${pieceoff}" z="MfRN21/NqoeAlOVw0WxLs+h6DLM="/>
+        <field:display field="numSerie" id="s_com_sav_domain_PieceOff_numSerie" object="${pieceoff}" z="c5FPiJqXYOj3XVn0bdrKRR25Lqs="/>
+        <field:display field="produit" id="s_com_sav_domain_PieceOff_produit" object="${pieceoff}" z="U0IwnBzPxQcsjSdGrIeJcDRgwIE="/>
+        <field:display field="failureDescription" id="s_com_sav_domain_PieceOff_failureDescription" object="${pieceoff}" z="NdpP1WVGPGZUmsyMAJJ3m4A0AM0="/>
+        <field:display field="box" id="s_com_sav_domain_PieceOff_box" object="${pieceoff}" z="m0DWr++Rn9evgb0o1m+x02eFySQ="/>
+    </page:show>
+</div>

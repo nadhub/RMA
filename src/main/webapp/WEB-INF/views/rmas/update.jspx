@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_sav_domain_Rma" modelAttribute="rma" path="/rmas" versionField="Version" z="1VbqRY0mlZdf3Qq75Ic6anzjUVo=">
+        <field:input field="rmaNumber" id="c_com_sav_domain_Rma_rmaNumber" required="true" z="vRkZWjUl0BxLs+yMvgWugtiB5TU="/>
+        <field:input field="societe" id="c_com_sav_domain_Rma_societe" z="6aIS5NymfErSs8DoBoR6LZmc3Xo="/>
+        <field:datetime dateTimePattern="${rma_datecreation_date_format}" field="dateCreation" id="c_com_sav_domain_Rma_dateCreation" required="true" z="m+B4Segbe8gZoWW1qRapkiK8AlU="/>
+        <field:select field="client" id="c_com_sav_domain_Rma_client" itemValue="id" items="${clients}" path="/clients" required="true" z="F7JcJ2z9krWY5Nxr/KFq83E6Ps8="/>
+        <field:input field="creeePar" id="c_com_sav_domain_Rma_creeePar" z="Xseu1tHmtTdVJrKBhAC5u09YI70="/>
+        <field:select field="transport" id="c_com_sav_domain_Rma_transport" items="${transports}" path="transports" z="+Xv+T4bVoLNfBkYj/jJ1/q0SIL0="/>
+        <field:select field="adresseDeRetour" id="c_com_sav_domain_Rma_adresseDeRetour" itemValue="id" items="${adressretours}" path="/adressretours" required="true" z="wVT7Rw4GGX4c5vDkxQ9b5mdCRs4="/>
+    </form:update>
+</div>

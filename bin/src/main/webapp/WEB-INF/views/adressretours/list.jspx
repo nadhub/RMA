@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_sav_domain_AdressRetour" items="${adressretours}" z="n0GDlDDTPhhIQrJ/S6m3/BZi04c=">
+        <table:table data="${adressretours}" id="l_com_sav_domain_AdressRetour" path="/adressretours" z="FvJZGr54rEiamq8ZPldN4ylZhr4=">
+            <table:column id="c_com_sav_domain_AdressRetour_adresseRetour" property="adresseRetour" z="nAWFgKCmZ4GDrmJ8nTQ12oruckw="/>
+            <table:column id="c_com_sav_domain_AdressRetour_adresse1" property="adresse1" z="z0PhBMAFHNAGKwcHZJiM2lZd+RA="/>
+            <table:column id="c_com_sav_domain_AdressRetour_adresse2" property="adresse2" z="sdEQEhDnMWyS7mND4s0WAjsbr3k="/>
+            <table:column id="c_com_sav_domain_AdressRetour_codePostal" property="codePostal" z="2NNez6MLKRuTEw943K56NzlBzSw="/>
+            <table:column id="c_com_sav_domain_AdressRetour_ville" property="ville" z="MACgzFWMPQ9fWwMmtG4guI7hUvg="/>
+            <table:column id="c_com_sav_domain_AdressRetour_Pays" property="pays" z="NGnS2nLqoIPQCryA4PfEJChAoY8="/>
+        </table:table>
+    </page:list>
+</div>

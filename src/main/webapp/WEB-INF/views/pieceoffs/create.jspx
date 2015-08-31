@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_sav_domain_PieceOff" modelAttribute="pieceOff" path="/pieceoffs" render="${empty dependencies}" z="F1+uQHdJcO52JzNFGTTUos/+P3M=">
+        <field:select field="piece" id="c_com_sav_domain_PieceOff_piece" itemValue="id" items="${pieces}" path="/pieces" required="true" z="0vsRKoymFGBQpSh35ac40YYQh08="/>
+        <field:textarea field="numSerie" id="c_com_sav_domain_PieceOff_numSerie" z="VNOstks2dk3OEi0SvOWMbNpJ1UE="/>
+        <field:textarea field="failureDescription" id="c_com_sav_domain_PieceOff_failureDescription" z="UpHfLhjq9pohgAnOB+wCY3NJVKc="/>
+        <field:input field="quantity" id="c_com_sav_domain_PieceOff_quantity" validationMessageCode="field_invalid_integer" z="ER7iJsKFvpSXr+uGe7AYR5+DZ/Q="/>
+        <field:select field="packingList" id="c_com_sav_domain_PieceOff_packingList" itemValue="id" items="${krakrmas}" path="/krakrmas" z="+kTK8ZdQ+ut76ANNTA9FRHBVA88="/>
+        <field:input field="box" id="c_com_sav_domain_PieceOff_box" validationMessageCode="field_invalid_integer" z="pFOs2+lJUfUrEu0IfetGdqTlz2k="/>
+        <field:select field="statut" id="c_com_sav_domain_PieceOff_statut" items="${statutkraks}" path="statutkraks" z="PBk2JFtF/lMeMyWVwWnvZd47am0="/>
+        <field:datetime dateTimePattern="${pieceOff_dateofreceived_date_format}" field="dateOfreceived" id="c_com_sav_domain_PieceOff_dateOfreceived" z="PMvnXmlhnf4ogtDBVqLELqAtGhA="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_sav_domain_PieceOff" render="${not empty dependencies}" z="/qaACKWW73p7nNDXblUl4fAMGsk="/>
+</div>

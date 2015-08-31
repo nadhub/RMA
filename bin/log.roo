@@ -1,0 +1,650 @@
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-12-27 15:20:25
+project --topLevelPackage com.sav --projectName suivi-rma --java 6
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-12-27 15:20:26
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-12-27 15:20:34
+// [failed] script --file g:\sts_workspace\scripts\sav_roo1.2.roo_1.5
+persistence setup --provider HIBERNATE --database MYSQL --databaseName rmadb --userName root 
+enum type --class ~.reference.Transport
+enum constant --name DHL
+enum constant --name FRANCE_EXPRESS
+enum constant --name GLS
+enum constant --name MAIN_PROPRE
+enum constant --name Autre
+enum constant --name SERNAM
+enum constant --name TNT
+enum constant --name UPS
+enum constant --name FedEx
+enum type --class ~.reference.Projet
+enum constant --name TN
+enum constant --name VISAGE
+enum constant --name PDP
+enum constant --name Autre
+enum type --class ~.reference.Statut
+enum constant --name A_REPARER
+enum constant --name REPARER
+enum constant --name EXPEDIER
+entity --class ~.domain.Region   --testAutomatically 
+field string --fieldName region --notNull 
+field string --fieldName description --sizeMax 100
+entity --class ~.domain.Client   --testAutomatically 
+field string --fieldName client --notNull 
+field string --fieldName adresse1 --sizeMax 100
+field string --fieldName adresse2 --sizeMax 100
+field string --fieldName codePostal 
+field string --fieldName ville
+field string --fieldName pays
+field reference --fieldName region --type ~.domain.Region 
+entity --class ~.domain.Produit   --testAutomatically 
+field string --fieldName modele --notNull 
+field string --fieldName codeArticle
+entity --class ~.domain.Piece   --testAutomatically 
+field string --fieldName piece --notNull 
+field string --fieldName codePiece
+entity --class ~.domain.MaterielRma   --testAutomatically 
+entity --class ~.domain.Contact   --testAutomatically 
+field string nomContact --notNull 
+field string email --regexp "[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+"
+field string tel
+entity --class ~.domain.AdressRetour   --testAutomatically 
+field string --fieldName adresseRetour --notNull 
+field string --fieldName adresse1
+field string --fieldName adresse2
+field string --fieldName codePostal
+field string --fieldName ville
+field string --fieldName Pays
+entity --class ~.domain.Rma   --testAutomatically 
+field string --fieldName rmaGenereNumber --transient 
+field string --fieldName rmaNumber --unique --notNull 
+field string --fieldName societe
+field date --type java.util.Date --fieldName dateCreation --notNull 
+field reference --fieldName client --type ~.domain.Client --notNull 
+field reference --fieldName adresseRetour --type ~.domain.AdressRetour --notNull 
+field reference --fieldName contact --type ~.domain.Contact 
+field string --fieldName creeePar --value NH 
+field enum --fieldName transport --type ~.reference.Transport
+focus --class ~.domain.MaterielRma
+field reference --fieldName rma --type ~.domain.Rma --notNull 
+field reference --fieldName modele --type ~.domain.Produit --notNull 
+field string --fieldName numSerieEntree --notNull 
+field string --fieldName panne
+field enum --fieldName projet --type ~.reference.Projet
+field boolean --fieldName garantie 
+field date --type java.util.Date --fieldName dateReception --notNull 
+field date --type java.util.Date --fieldName dateReparation 
+field string --fieldName diagnostic --sizeMax 150
+field boolean --fieldName materielRemplace 
+field string --fieldName numSerieSortie 
+field string --fieldName ipSav
+field enum --fieldName statut --type ~.reference.Statut
+field string --fieldName notes --sizeMax 150
+entity --class ~.domain.PieceOff  --testAutomatically 
+field date --type java.util.Date --fieldName dateHs
+field reference --fieldName piece --type ~.domain.Piece --notNull 
+field string --fieldName numSerie
+field reference --fieldName produit --type ~.domain.MaterielRma
+entity --class ~.domain.Livraison  --testAutomatically 
+field number --type java.lang.Long --fieldName livGenereNumber --transient 
+field string --fieldName reference --notNull --unique 
+field date --type java.util.Date --fieldName dateLivraison --notNull 
+field reference --fieldName materielRma --type ~.domain.MaterielRma --notNull 
+field enum --fieldName transport --type ~.reference.Transport
+field string --fieldName trackingNumber
+// script --file g:\sts_workspace\scripts\sav_roo1.2.roo_1.5
+perform eclipse
+web mvc setup 
+web mvc all --package ~.web
+// [failed] perform eclipse
+perform eclipse
+addon search fr
+osgi obr url add --url http://spring-roo-addon-french.googlecode.com/svn/repo/repository.xml
+osgi obr start --bundleSymbolicName org.springframework.roo.addon.french
+osgi obr url remove --url http://spring-roo-addon-french.googlecode.com/svn/repo/repository.xml
+addon install id --searchResultId 04
+perform eclipse
+perform eclipse
+perform clean
+perform eclipse 
+perform assembly
+perform tests
+perform eclipse
+perform clean
+perform eclipse
+perform clean
+perform eclipse
+perform clean
+perform eclipse
+perform clean
+perform eclipse
+addon search french
+web mvc language --code fr 
+perform clean
+perform eclipse
+perform clean
+// [failed] perform eclipse
+perform eclipse
+perform clean
+perform eclipse
+perform clean
+perform eclipse
+perform clean
+perform eclipse
+perform clean
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-12-27 18:19:12
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-12-28 10:11:30
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+web report setup 
+web report add --controller com.sav.web.LivraisonController --reportName borederauDeLivraison --format pdf 
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+web report add --controller com.sav.web.MaterielRmaController --reportName equipement
+perform clean 
+perform eclipse
+perform clean 
+// [failed] perform clean 
+perform eclipse
+perform eclipse
+// [failed] perform clean 
+// [failed] perform clean 
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+// [failed] perform clean 
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+// [failed] perform clean 
+perform clean 
+perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-12-28 17:29:53
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-12-29 08:38:05
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+// [failed] perform clean 
+perform clean 
+perform eclipse
+// [failed] perform clean 
+// [failed] perform clean 
+// [failed] perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+// [failed] perform clean 
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+// [failed] perform clean 
+perform clean 
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-12-29 12:14:19
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-12-29 12:31:26
+perform clean 
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+// [failed] perform clean 
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+focus --class com.sav.domain.MaterielRma
+finder list --filter modele
+finder list --filter numSortieEntree
+finder list --filter numSerieEntree
+finder add --finderName findMaterielRmasByNumSerieEntreeLike
+finder list --filter rma
+finder add --finderName findMaterielRmasByRma
+finder list --filter statut
+finder add --finderName findMaterielRmasByStatut
+perform clean 
+perform eclipse
+// [failed] perform clean 
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+// [failed] finder list --depth 2 --filter projet,statut
+finder list --depth 2 --filter "projet,statut"
+finder list --depth 2 --filter projet,statut
+// [failed] finder add --finderName findMaterielRmasByProjetAndStatut
+finder add --finderName findMaterielRmasByProjetAndStatut
+perform eclipse
+finder list --filter diagnostic
+finder add --finderName findMaterielRmasByDiagnosticLike
+finder list --filter dateReception
+finder add --finderName findMaterielRmasByDateReceptionGreaterThanEquals
+focus --class com.sav.domain.Livraison
+// [failed] finder list --filter reference
+finder list --filter reference
+// [failed] finder add --finderName findLivraisonsByReferenceEquals
+// [failed] finder add --finderName findLivraisonsByReferenceEquals
+finder add --finderName findLivraisonsByReferenceEquals
+// [failed] focus --class com.sav.domain.Rma
+finder list --filter rmaNumber
+finder add --finderName findRmasByRmaNumberLike
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+// [failed] perform clean 
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-01 17:46:09
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-01 17:54:50
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-01 18:00:28
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-02 08:00:23
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+web report add --controller com.sav.web.MaterielRmaController --reportName visage 
+// [failed] web report add --controller com.sav.web.MaterielRmaController --reportName pdp
+web report add --controller com.sav.web.MaterielRmaController --reportName pdp
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+// [failed] perform eclipse
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+perform tests
+perform clean 
+// [failed] perform clean 
+perform eclipse
+perform tests
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-02 15:53:37
+// [failed] perform eclipse
+perform eclipse
+focus --class com.sav.domain.Livraison
+finder list 
+// [failed] finder add --finderName findLivraisonsByMaterielRma
+finder add --finderName findLivraisonsByMaterielRma
+perform eclipse
+perform eclipse
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-02 16:42:27
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-03 12:55:58
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+// [failed] perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+// [failed] perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform package 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-04 13:02:14
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-04 14:15:50
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+// [failed] perform clean 
+perform eclipse
+perform eclipse
+// [failed] perform eclipse
+perform eclipse
+// [failed] perform clean 
+perform clean 
+perform eclipse
+// [failed] perform clean 
+perform clean 
+// [failed] perform package 
+perform package 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-04 15:54:28
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-05 09:36:48
+perform clean 
+perform eclipse
+// [failed] perform clean 
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-05 09:54:09
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-05 09:54:35
+perform clean 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-05 09:56:48
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-05 09:59:26
+// [failed] perform eclipse
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+perform clean 
+perform package 
+perform clean 
+// [failed] perform eclipse
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-05 10:30:22
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-06 11:13:53
+focus --class ~.domain.MaterielRma
+// [failed] focus --class ~.domain.Client
+field string --fieldName region
+field string --fieldName contact
+// [failed] field string --fieldName tel
+field string --fieldName tel
+field string --fieldName email
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-06 11:31:35
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-06 11:31:47
+perform clean 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-06 11:37:16
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-06 11:38:01
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-06 11:42:12
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-06 11:42:26
+focus --class ~.domain.AdressRetour
+field string --fieldName contact
+// [failed] field string --fieldName tel
+field string --fieldName tel
+field string --fieldName email
+field string --fieldName region
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-06 12:04:03
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-06 12:04:20
+perform clean 
+perform eclipse
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform clean 
+perform eclipse
+perform eclipse
+// [failed] perform clean 
+perform clean 
+// [failed] perform package
+perform package
+perform clean 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-06 15:29:52
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-06 16:47:29
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-06 17:29:44
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-16 05:59:40
+perform package
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-16 06:28:30
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-16 07:19:53
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-30 09:00:06
+perform package
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-30 10:02:21
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-30 16:08:07
+perform clean
+perform package
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-31 10:38:27
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-31 16:25:37
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-31 16:40:26
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-02-02 09:15:02
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-02-03 08:49:05
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-02-06 14:49:08
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-02-06 15:12:15
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-02-06 15:40:04
+entity --class ~.domain.krakRma --testAutomatically 
+field string --fieldName packingList --notNull 
+field date --type java.util.Date --fieldName dateOfShipment
+field enum --type com.sav.reference.Projet --fieldName projectName
+field enum --type com.sav.reference.Transport --fieldName transport
+field string --fieldName trackingNumber
+web mvc scaffold --class ~.web.krakRmaController 
+entity --class ~.domain.box  --testAutomatically 
+field number --type java.lang.Number --fieldName lotNumber --notNull 
+field reference --fieldName packingList --type com.sav.domain.KrakRma 
+field number --fieldName quantity --type java.lang.Number 
+field number --fieldName weight --type double
+web mvc scaffold --class ~.web.BoxController 
+// [failed] focus --class com.sav.domain.PieceOff
+field reference --fieldName box --type com.sav.domain.Box
+enum type --class ~.reference.projectKrakRma
+enum constant --name SNCF
+enum constant --name PDP
+enum constant --name Office
+enum constant --name Other
+web report add --controller com.sav.web.PieceOffController --reportName pieceoff
+perform eclipse
+perform clean

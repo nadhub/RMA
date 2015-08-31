@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sav_domain_AdressRetour" object="${adressretour}" path="/adressretours" z="60lz4+1x9iwnfpZ2lT/3dCukDJo=">
+        <field:display field="adresseRetour" id="s_com_sav_domain_AdressRetour_adresseRetour" object="${adressretour}" z="vxnUgooPvTdD9ZdfsozhAB3NUD0="/>
+        <field:display field="adresse1" id="s_com_sav_domain_AdressRetour_adresse1" object="${adressretour}" z="U0MAySvyw1bMTQgtBVqh4Rw7bEQ="/>
+        <field:display field="adresse2" id="s_com_sav_domain_AdressRetour_adresse2" object="${adressretour}" z="/kQMXPhqBbDugCEWBjl+UGbZRcQ="/>
+        <field:display field="codePostal" id="s_com_sav_domain_AdressRetour_codePostal" object="${adressretour}" z="T0P1wRncoPZFgVfRTux5lDAt+GY="/>
+        <field:display field="ville" id="s_com_sav_domain_AdressRetour_ville" object="${adressretour}" z="8j3aPZmWi/3g1narBD443JjBJgk="/>
+        <field:display field="pays" id="s_com_sav_domain_AdressRetour_Pays" object="${adressretour}" z="Z5HtH6I28KLSLbZYf8zx9MGsU0M="/>
+        <field:display field="contact" id="s_com_sav_domain_AdressRetour_contact" object="${adressretour}" z="+PPEFjQMeC1UGRWrKVXX9rxJGgA="/>
+        <field:display field="tel" id="s_com_sav_domain_AdressRetour_tel" object="${adressretour}" z="q0cuZquc8NoI2sDOJYm/hdsPlN8="/>
+        <field:display field="email" id="s_com_sav_domain_AdressRetour_email" object="${adressretour}" z="7kyBIkQFtYvQQX19tQAeV5PAHcU="/>
+        <field:display field="region" id="s_com_sav_domain_AdressRetour_region" object="${adressretour}" z="ACJUzxNLOkNSHXpqt9o4Ta91NlU="/>
+    </page:show>
+</div>

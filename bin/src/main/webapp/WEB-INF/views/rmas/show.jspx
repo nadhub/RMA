@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_sav_domain_Rma" object="${rma}" path="/rmas" z="DCQZJRLdMtG/IAQMdRyLUE+1WUU=">
+        <field:display field="rmaNumber" id="s_com_sav_domain_Rma_rmaNumber" object="${rma}" z="e/Y2171S4oGfpl4+LlzRHoPnknA="/>
+        <field:display field="societe" id="s_com_sav_domain_Rma_societe" object="${rma}" z="vy51x2J+yHDBRWT0qj8tA0ume2Q="/>
+        <field:display date="true" dateTimePattern="${rma_datecreation_date_format}" field="dateCreation" id="s_com_sav_domain_Rma_dateCreation" object="${rma}" z="tQ4WDWna9nUBT5zf3cZ3bB+1Bs0="/>
+        <field:display field="client" id="s_com_sav_domain_Rma_client" object="${rma}" z="G8bm8Yyyo+5CYv0Usr2VMrBjJ2Q="/>
+        <field:display field="creeePar" id="s_com_sav_domain_Rma_creeePar" object="${rma}" z="TAdVawoJaswK6MpCuPQUnBfl2nw="/>
+        <field:display field="transport" id="s_com_sav_domain_Rma_transport" object="${rma}" z="jkUIv3nLMoAulSe8eBkJb4QIy8g="/>
+        <field:display field="adresseDeRetour" id="s_com_sav_domain_Rma_adresseDeRetour" object="${rma}" z="V0eWB/qjMb2hXMMzuAz2KEDFx7o="/>
+    </page:show>
+</div>
